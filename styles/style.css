@@ -1,36 +1,10 @@
-@keyframes like {
-  0% {
-    scale: 1;
-  }
-
-  50% {
-    scale: 1.25;
-  }
-
-  100% {
-    scale: 1;
-  }
-}
-
-@keyframes sparks {
-  0% {
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
 .button {
   border: none;
   background-color: transparent;
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font), fantasy;
   font-size: var(--small-font-size);
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
 }
 
 .button__styled {
@@ -45,13 +19,11 @@
 
 .button__styled:focus {
   box-shadow: 2px 2px 0 var(--accent-color);
-  transition: 0.3s ease-in-out;
 }
 
 .card__icon-button:focus-visible {
   outline: var(--border);
   outline-offset: -1px;
-  transition: 0.3s ease-in-out;
 }
 
 .button__text {
@@ -94,13 +66,12 @@
 
 .header {
   margin-block: 100px;
-  block-size: clamp(327px, 49.03vh, 368px);
+  padding-block: 128px;
   display: flex;
   flex-direction: column;
   gap: 20px;
   align-items: center;
-  justify-content: center;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), fantasy;
   background-color: var(--bg-color);
   border: var(--border);
 }
@@ -141,8 +112,10 @@
 
 .card__image-picture {
   object-fit: cover;
+  object-position: center;
   width: 100%;
   aspect-ratio: 1 / 1;
+  border-block: var(--border);
 }
 
 .grayscale {
@@ -165,8 +138,8 @@
   filter: hue-rotate(180deg);
 }
 
-.blur {
-  filter: blur(5px);
+.brightness {
+  filter: brightness(150%);
 }
 
 .invert-contrast {
@@ -179,7 +152,7 @@
   top: var(--label-margin-top);
   right: var(--label-margin-right);
   mix-blend-mode: hard-light;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), fantasy;
   font-size: var(--small-font-size);
   color: var(--font-color);
   text-shadow: -1px 0 var(--text-stroke-color), 0 1px var(--text-stroke-color), 1px 0 var(--text-stroke-color), 0 -1px var(--text-stroke-color);
@@ -222,74 +195,6 @@
   padding-inline: auto;
 }
 
-.sparks {
-  opacity: 0;
-}
-
-.core {
-  fill: var(--bg-color);
-  transition: fill 0.3s ease-in-out;
-}
-
-.main-body {
-  fill: var(--bg-color);
-  transition: fill 0.3s ease-in-out 0.05s;
-}
-
-.card__icon-button:hover .core {
-  fill: var(--heart-contour);
-}
-
-.card__icon-button:hover .main-body {
-  fill: var(--heart-contour);
-}
-
-.card__icon-button:not(:hover) .core {
-  fill: var(--bg-color);
-  transition: fill 0.3s ease-in-out 0.05s;
-}
-
-.card__icon-button:not(:hover) .main-body {
-  fill: var(--bg-color);
-  transition: fill 0.3s ease-in-out;
-}
-
-.card__icon-button:active .core {
-  fill: var(--heart-main-body);
-}
-
-.card__icon-button:active .main-body {
-  fill: var(--heart-main-body);
-}
-
-.like-icon.is-liked .core {
-  fill: var(--heart-main-body);
-  transition: fill 0.3s ease-in-out;
-}
-
-.like-icon.is-liked .main-body {
-  fill: var(--heart-main-body);
-  transition: fill 0.3s ease-in-out 0.03s;
-}
-
-.like-icon.is-liked .contour {
-  fill: var(--heart-main-body);
-  transition: fill 0.3s ease-in-out 0.06s;
-}
-
-.like-icon.is-liked .heart {
-  animation: like 0.3s ease-in 0.1s;
-  transform-origin: center center;
-}
-
-.like-icon.is-liked .sparks {
-  animation: sparks 0.3s ease-in 0.3s;
-}
-
-.like-icon:not(.is-liked) .contour {
-  transition: 0.1s linear;
-}
-
 .button__save {
   margin-inline: auto;
   margin-block-start: 50px;
@@ -320,7 +225,6 @@
   background-color: var(--bg-color);
   position: fixed;
   inset: 0;
-  transition: opacity 0.4s linear;
 }
 
 .dialog:not([open]) {
@@ -329,7 +233,7 @@
 }
 
 .dialog[open]::backdrop {
-  backdrop-filter: brightness(25%);
+  background-color: rgb(0, 0, 0, 75%);
 }
 
 .dialog__content {
@@ -346,7 +250,7 @@
 
 .dialog__content-text {
   max-inline-size: 234px;
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font), fantasy;
   display: inline-block;
   font-size: var(--small-font-size);
   line-height: 1.5em;
@@ -364,6 +268,10 @@
 @media (width <= 375px) {
   .button__save {
     flex-direction: column;
+  }
+
+  .header {
+    padding-block: 120px;
   }
 
   .card__title {
