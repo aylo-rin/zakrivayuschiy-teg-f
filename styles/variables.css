@@ -1,1 +1,41 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+    --main-font: 'Inter-Variable';
+    --accent-font: 'PressStart2P';
+    --main-font-size: 18px;
+    --small-font-size: 14px;
+    --font-color: #000;
+    --text-font-weight: 400;
+    --title-font-weight: 700;
+    --line-height: 21px;
+    --card-title-line-height: 25px;
+    --text-stroke-color: #fff;
+    --accent-color: #000;
+
+    --bg-color: #fff;
+    --bg-image: repeating-linear-gradient(#d3d3d3 0, #d3d3d3 2px, rgba(211, 211, 211, 0) 2px, rgba(211, 211, 211, 0) 4px), 
+                repeating-linear-gradient(90deg,#d3d3d3 0, #d3d3d3 2px, rgba(211, 211, 211, 0) 2px, rgba(211, 211, 211, 0) 4px),
+                linear-gradient(to bottom, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%);
+
+    --border: 2px solid currentColor;
+
+    --label-margin-top: 25px;
+    --label-margin-right: 25px;
+
+    --floppy-size: 21px;
+
+    --heart-contour: #000;
+    --heart-main-body: #f00;
+    --heart-sparks: #f00;
+}
+
+@media (width <= 375px) {
+    :root {
+        --card-title-line-height: 22px;
+
+        --label-margin-right: 13px;
+        --label-margin-top: 21px;
+
+        --floppy-size: 28px;
+    }
+}
+
