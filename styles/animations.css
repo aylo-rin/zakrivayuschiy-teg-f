@@ -32,47 +32,47 @@
   
   .core {
     fill: transparent;
-    transition: fill 0.3s ease-in 0.03s;
+    transition: fill 0.3s ease 0.03s;
   }
   
   .main-body {
     fill: transparent;
-    transition: fill 0.3s ease-in;
+    transition: fill 0.3s ease;
   }
   
   .card__icon-button:hover .core {
     fill: var(--heart-contour);
-    transition: fill 0.3s ease-in;
+    transition: fill 0.3s ease;
   }
   
   .card__icon-button:hover .main-body {
     fill: var(--heart-contour);
-    transition: fill 0.3s ease-in 0.05s;
+    transition: fill 0.3s ease 0.05s;
   }
   
   .card__icon-button:active .core {
     fill: var(--heart-main-body);
-    transition: fill 0.3s ease-in;
+    transition: fill 0.3s ease;
   }
   
   .card__icon-button:active .main-body {
     fill: var(--heart-main-body);
-    transition: fill 0.3s ease-in 0.05s;
+    transition: fill 0.3s ease 0.05s;
   }
   
   .like-icon.is-liked .core {
     fill: var(--heart-main-body);
-    transition: fill 0.3s ease-in;
+    transition: fill 0.3s ease;
   }
   
   .like-icon.is-liked .main-body {
     fill: var(--heart-main-body);
-    transition: fill 0.3s ease-in 0.03s;
+    transition: fill 0.3s ease 0.03s;
   }
   
   .like-icon.is-liked .contour {
     fill: var(--heart-main-body);
-    transition: fill 0.3s ease-in 0.06s;
+    transition: fill 0.3s ease 0.06s;
   }
   
   .like-icon.is-liked .heart {

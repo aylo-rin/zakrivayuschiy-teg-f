@@ -4,7 +4,7 @@
   font-family: var(--accent-font), fantasy;
   font-size: var(--small-font-size);
   cursor: pointer;
-  transition: 0.5s ease-in-out;
+  transition: 0.3s ease;
 }
 
 .button__styled {
